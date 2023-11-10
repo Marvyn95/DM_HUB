@@ -1,0 +1,62 @@
+{% extends"layout.html" %}
+{% block content %}
+<h2 class="heading">LOGIN HERE</h2>
+<div class="form-wrapper">
+    <form class="form-container" action="" method="POST">
+        <div>
+            <label for="email_address">Email Address</label>
+            <input type="email" name="email_address">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="text" name="password">
+        </div>
+        <div>
+            <label for="submit">Sign In</label>
+            <input type="submit" name="submit" value="submit">
+        </div>
+        <div>
+            <h4>Forgot Password??</h4>
+            <li><a href="{{url_for('password_reset_route')}}">Reset Password</a></li> 
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

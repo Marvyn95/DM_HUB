@@ -1,0 +1,18 @@
+{% extends "layout.html"%}
+{% block content %}
+
+<h2 class="heading">SELLERS</h2>
+<div class="container-4">
+    {% for seller in all_sellers %}
+        <div class="seller-class">
+            {% if seller['products'][0] %}
+                <a href="{{ url_for('account_page_route', user_mail=seller['email_address']) }}"><img src="./static/images/{{ seller['products'][0]['image'] }}" alt="product image"></a>
+            {% endif %}
+            <p>{{ seller["first_name"] }}</p>
+            <p>{{ seller["location"] }}, {{ seller["country"] }}</p>
+            <p>{{ seller["phone_number"] }}</p>
+            <p>{{ seller["email_address"] }}</p>
+        </div>                  
+    {% endfor %} 
+</div>
+{% endblock content %}

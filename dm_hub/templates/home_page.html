@@ -1,0 +1,14 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="container-4">
+    {% for pdt in products %}
+        <div class="product-class">
+            <a href="{{ url_for('product_page_route', product_name = pdt['product_name'], owner_id = pdt['owner_id']) }}"><img src="./static/images/{{pdt['image']}}" alt="product image"></a>
+            <p>{{ pdt["product_name"] }}</p>
+            <p>{{ pdt["category"] }}</p>
+            <p>{{ pdt["pdt_desc"] }}</p>
+            <p>{{ pdt["price"] }} {{ pdt["currency"] }}</p>
+        </div>   
+    {% endfor %}                  
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="heading">Product Page</div>
+    <div class="product-image">
+        <img src="./static/images/{{product_info['image']}}" alt="product image">
+    </div>
+    <div class="container-2">
+        <ul>
+            {% if login_status[1]["_id"] == product_info["owner_id"] %}
+                <li><a href="{{url_for('edit_product_route', product_name = product_info['product_name'])}}">Edit Product Info</a></li>
+                <li><a href="{{url_for('product_page_route', product_name = product_info['product_name'], owner_id=product_info['owner_id'], delete = True)}}">Delete Item</a></li>
+            {% else %}
+                <li><a href="{{url_for('product_page_route', product_name = product_info['product_name'], owner_id=product_info['owner_id'], order = True)}}">Order Item</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="product-info">
+        <p>{{ product_info["product_name"] }}</p>
+        <p>{{ product_info["pdt_desc"] }}</p>
+        <p>{{ product_info["category"] }}</p>
+        <p>{{ product_info["price"] }} {{ product_info["currency"] }}</p>
+    </div>
+{% endblock content %}

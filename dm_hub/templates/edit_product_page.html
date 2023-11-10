@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="form-wrapper">
+    <form class="form-container" action="#" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="product_name">Edit Product Name</label>
+            <input type="text" name="product_name" value="{{form_data.get('product_name')}}">
+        </div>
+
+        <div>
+            <label for="pdt_desc">Edit Product Description</label>
+            <input name="pdt_desc" id="" cols="30" rows="10" value="{{form_data.get('pdt_desc')}}">
+        </div>
+
+        <div>
+            <label for="category">Edit Category</label>
+            <select name="category" id="" value ="{{form_data.get('category')}}">
+                <option value="electronics">Electronics</option>
+                <option value="fashion_and_clothing">Fashion and Clothing</option>
+                <option value="home_and_furniture">Home and Furniture</option>
+                <option value="beauty_and_health">Beauty and Health</option>
+                <option value="toys_and_games">Toys and Games</option>
+                <option value="automotives">Automotives</option>
+                <option value="books_movies_and_music">Books, Movies and Music</option>
+                <option value="food_and_beverages">Food and Beverages</option>
+                <option value="arts_and_crafts">Arts and Crafts</option>
+                <option value="office_supplies">Office Supplies</option>
+                <option value="jewerly_and_watches">Jewerly and Watches</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="price">Edit Price</label>
+            <input type="int" name="price" value="{{form_data.get('price')}}">
+        </div>
+
+        <div>
+            <label for="currency">Change Currency</label>
+            <select name="currency" id="" value="{{form_data.get('currency')}}">
+                <option value="UGSHS">UGSHS</option>
+                <option value="KSHS">KSHS</option>
+                <option value="TSHS">TSHS</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="image">Upload New Product Picture</label>
+            <input type="file" name="image" accept=".jpeg, .jpg, .png" value="" required>
+        </div>
+
+        <div>
+            <label for="submit">Update Product</label>
+            <input type="submit" name="submit" value="Update Product">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

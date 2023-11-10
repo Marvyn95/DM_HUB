@@ -1,0 +1,21 @@
+{% extends "layout.html"%}
+{% block content %}
+<div class="container-4">
+    {% for order in orders %}
+        <div class="product-class">
+            <img src="./static/images/{{order['image']}}" alt="product image">
+            <p>{{order["product_name"]}}</p>
+            <p>{{order["pdt_desc"]}}</p>
+            <p>{{order["category"]}}</p>
+            <p>{{order["price"]}} {{order["currency"]}}</p>
+            <p></p>
+            <p>Buyer Information</p>
+            <p>{{order["buyer_info"][0]}} {{order["buyer_info"][1]}}</p>
+            <p>{{order["buyer_info"][2]}}</p>
+            <p>{{order["buyer_info"][3]}}</p>
+            <p>{{order["buyer_info"][4]}}, {{order["buyer_info"][5]}}</p>
+            <p><a href="{{ url_for('orders_route', product_name=order['product_name'], buyer_email = order['buyer_info'][3]) }}">Delete Order</a></p>
+        </div>
+    {% endfor %}                  
+</div>
+{% endblock content %}
